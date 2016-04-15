@@ -10,7 +10,7 @@ source:
     md5: b3caa51fd2c2ae6e4e304e570489074f
 
 build:
-    number: 0
+    number: 1
     skip: True  # [win or py3k]
     detect_binary_files_with_prefix: true
 
