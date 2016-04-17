@@ -10,27 +10,25 @@ source:
     md5: b3caa51fd2c2ae6e4e304e570489074f
 
 build:
-    number: 1
-    skip: True  # [win or py3k]
+    number: 2
+    skip: True  # [win]
     detect_binary_files_with_prefix: true
 
 requirements:
     build:
-        - python
-        - numpy x.x
         - jasper
-
+        - libpng
+        - libnetcdf
     run:
-        - python
-        - numpy x.x
         - jasper
-        - six
+        - libpng
+        - libnetcdf
 
 test:
     commands:
-        - ls $(grib_info -t) | head -n 2   # Prints the test data directory.
-    imports:
-        - gribapi
+        - grib_info
+        - ls $(grib_info -t)
+        - ls $(grib_info -d)
 
 about:
     home: https://software.ecmwf.int/wiki/display/GRIB/Home
