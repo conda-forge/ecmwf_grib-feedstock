@@ -10,19 +10,19 @@ source:
     md5: b3caa51fd2c2ae6e4e304e570489074f
 
 build:
-    number: 2
+    number: 3
     skip: True  # [win]
     detect_binary_files_with_prefix: true
 
 requirements:
     build:
         - jasper
-        - libpng
-        - libnetcdf
+        - libpng 1.6*
+        - libnetcdf 4.3*
     run:
         - jasper
-        - libpng
-        - libnetcdf
+        - libpng 1.6*
+        - libnetcdf 4.3*
 
 test:
     commands:
