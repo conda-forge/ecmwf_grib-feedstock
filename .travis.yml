@@ -4,17 +4,16 @@
 language: objective-c
 
 env:
-  matrix:
-    
-    - CONDA_NPY=110  CONDA_PY=27
-    - CONDA_NPY=111  CONDA_PY=27
   global:
     # The BINSTAR_TOKEN secure variable. This is defined canonically in conda-forge.yml.
     - secure: "qjtEQNW57183hu4KVMgHDa8m2L2GjrZnyOg9AITUephv50U0QU1V3LHgVVZ0tXLbDEi1BkZtEMSC7wcAEVa+MJUx1bzrBIg4MQKxoZR5NRugMCTHay7Tz8RjaddbM7ur2GG+mQDV4VFYGGAB57S3OxiuXAovBAecbJIFawffNMV0D8saBL4Q75LXy0CRlPgSZkSuye/YbhazF27gqTOxNA5E1gWRsx/zneFVvaqypgQmpmh2I7f4VTuGaJyIrUtiUJ2y3+QSCwjdDAiT2ILJUeX3pYiOjUfpci1Pqla6mZF3kdnayVBisr2d94wqW9qTQKfSIpqtbYlhf99ehU0muFgySVICW9FNToC7WUmtURR4CVSAc+5GrtGO182DB8Sa6zpLOSz3tlSVbbbx/k0/YxT+UPS+gi5pGxJfTymr+IAsKP+34S3v2Wa5Z52NmqQmO1lNkIY2E2/ycK3JYcPNQdy4s9THZBz9AZ95EY4+5MKLLByhvZ7ygns1e5l9TpnX3wCMK9TowkvXbKyj4lcAmZOinmfpzjZmZ9EfnB3tizInx4+UxGNgs/l2w73s6T9Ob/jlhvWMGurLGqti0l/ynuayyuT+o/IAu9OPE9fWc9J5vOXVy15rIeeNrFqzwjVhOl0+p1I1qCJBILxTkc6UEqo31i6yFrwoHggdgKwzoXQ="
 
 
 before_install:
+    # Remove homebrew.
     - brew remove --force $(brew list)
+    - brew cleanup -s
+    - rm -rf $(brew --cache)
 
 install:
     - |
@@ -25,8 +24,9 @@ install:
 
       export PATH=/Users/travis/miniconda3/bin:$PATH
 
+      conda config --set show_channel_urls true
       conda update --yes conda
-      conda install --yes conda-build jinja2 anaconda-client
+      conda install --yes conda-build=1.20.0 jinja2 anaconda-client
       conda config --add channels conda-forge
       
 
