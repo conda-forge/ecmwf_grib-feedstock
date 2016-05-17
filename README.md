@@ -5,7 +5,7 @@ Home: https://software.ecmwf.int/wiki/display/GRIB/Home
 
 Package license: Apache-2.0
 
-Feedstock license: BSD
+Feedstock license: BSD 3-Clause
 
 Summary: The ECMWF API for encoding and decoding WMO FM-92 GRIB edition 1 and edition 2 messages.
 
@@ -69,9 +69,10 @@ Terminology
 
 Current build status
 ====================
+
 Linux: [![Circle CI](https://circleci.com/gh/conda-forge/ecmwf_grib-feedstock.svg?style=svg)](https://circleci.com/gh/conda-forge/ecmwf_grib-feedstock)
 OSX: [![TravisCI](https://travis-ci.org/conda-forge/ecmwf_grib-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/ecmwf_grib-feedstock) 
-Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/ecmwf_grib-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/ecmwf_grib-feedstock/branch/master)
+Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/ecmwf-grib-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/ecmwf-grib-feedstock/branch/master)
 
 Current release info
 ====================
