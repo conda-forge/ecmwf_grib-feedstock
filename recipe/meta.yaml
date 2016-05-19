@@ -20,17 +20,26 @@ requirements:
         - jasper
         - libpng >=1.6.21,<1.7
         - libnetcdf 4.4.*
+        - gcc
+        - isl 0.12.*
     run:
         - jasper
         - libpng >=1.6.21,<1.7
         - libnetcdf 4.4.*
+        - libgcc
+        - isl 0.12.*
 
 test:
     commands:
         - grib_info
         - ls $(grib_info -t)
         - ls $(grib_info -d)
-
+        - test -f ${PREFIX}/lib/libgrib_api.so  # [linux]
+        - test -f ${PREFIX}/lib/libgrib_api_f77.so  # [linux]
+        - test -f ${PREFIX}/lib/libgrib_api_f90.so  # [linux]
+        - test -f ${PREFIX}/lib/libgrib_api.dylib  # [osx]
+        - test -f ${PREFIX}/lib/libgrib_api_f77.dylib  # [osx]
+        - test -f ${PREFIX}/lib/libgrib_api_f90.dylib  # [osx]
 about:
     home: https://software.ecmwf.int/wiki/display/GRIB/Home
     license: Apache-2.0
