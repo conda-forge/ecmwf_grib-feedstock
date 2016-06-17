@@ -1,4 +1,4 @@
-{% set version = "1.14.7" %}
+{% set version = "1.15.0" %}
 
 package:
     name: ecmwf_grib
@@ -7,22 +7,23 @@ package:
 source:
     fn: grib_api-{{ version }}.tar.gz
     url: https://software.ecmwf.int/wiki/download/attachments/3473437/grib_api-{{ version }}-Source.tar.gz
-    md5: b3caa51fd2c2ae6e4e304e570489074f
+    sha256: 733f48e2882141003b83fa165d1ea12cad3c0c56953bc30be1d5d4aa6a0e5913
 
 build:
-    number: 4
+    number: 0
     skip: True  # [win]
     detect_binary_files_with_prefix: true
 
 requirements:
     build:
+        - cmake
         - jasper
-        - libpng 1.6*
-        - libnetcdf 4.4*
+        - libpng >=1.6.21,<1.7
+        - libnetcdf 4.4.*
     run:
         - jasper
-        - libpng 1.6*
-        - libnetcdf 4.4*
+        - libpng >=1.6.21,<1.7
+        - libnetcdf 4.4.*
 
 test:
     commands:
@@ -37,6 +38,7 @@ about:
 
 extra:
     recipe-maintainers:
+        - kmuehlbauer
+        - ocefpaf
         - pelson
         - rhattersley
-        - ocefpaf

@@ -10,13 +10,19 @@ export PYTHON=
 export LDFLAGS="$LDFLAGS -L$PREFIX/lib -Wl,-rpath,$PREFIX/lib"
 export CFLAGS="$CFLAGS -fPIC -I$PREFIX/include"
 
-./configure --prefix=$PREFIX \
-            --with-jasper=$PREFIX \
-            --with-netcdf=$PREFIX \
-            --with-png-support \
-            --disable-fortran \
-            --disable-python
+src_dir="$(pwd)"
+mkdir ../build
+cd ../build
+cmake $src_dir \
+         -DCMAKE_INSTALL_PREFIX=$PREFIX \
+         -DENABLE_JPG=1 \
+         -DENABLE_NETCDF=1 \
+         -DENABLE_PNG=1 \
+         -DENABLE_PYTHON=0 \
+         -DENABLE_FORTRAN=0
 
 make
-eval ${LIBRARY_SEARCH_VAR}=$PREFIX/lib make check
+export ECCODES_TEST_VERBOSE_OUTPUT=1
+eval ${LIBRARY_SEARCH_VAR}=$PREFIX/lib
+ctest
 make install
