@@ -6,6 +6,10 @@ elif [[ $(uname) == Linux ]]; then
   export LIBRARY_SEARCH_VAR=LD_LIBRARY_PATH
 fi
 
+export PYTHON=
+export LDFLAGS="$LDFLAGS -L$PREFIX/lib -Wl,-rpath,$PREFIX/lib"
+export CFLAGS="$CFLAGS -fPIC -I$PREFIX/include"
+
 src_dir="$(pwd)"
 mkdir ../build
 cd ../build
