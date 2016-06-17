@@ -16,6 +16,7 @@ build:
 
 requirements:
     build:
+        - cmake
         - jasper
         - libpng >=1.6.21,<1.7
         - libnetcdf 4.4.*
