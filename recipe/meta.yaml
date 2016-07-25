@@ -1,4 +1,4 @@
-{% set version = "1.15.0" %}
+{% set version = "1.16.0" %}
 
 package:
     name: ecmwf_grib
@@ -7,10 +7,10 @@ package:
 source:
     fn: grib_api-{{ version }}.tar.gz
     url: https://software.ecmwf.int/wiki/download/attachments/3473437/grib_api-{{ version }}-Source.tar.gz
-    sha256: 733f48e2882141003b83fa165d1ea12cad3c0c56953bc30be1d5d4aa6a0e5913
+    sha256: 0068ca4149a9f991d4c86a813ac73b4e2299c6a3fd53aba9e6ab276ef6f0ff9a
 
 build:
-    number: 1
+    number: 0
     skip: True  # [win]
     detect_binary_files_with_prefix: true
 
@@ -21,13 +21,11 @@ requirements:
         - libpng >=1.6.21,<1.7
         - libnetcdf 4.4.*
         - gcc
-        - isl 0.12.*
     run:
         - jasper
         - libpng >=1.6.21,<1.7
         - libnetcdf 4.4.*
-        - libgcc
-        - isl 0.12.*
+        - libgfortran
 
 test:
     commands:
