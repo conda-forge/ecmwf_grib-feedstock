@@ -39,8 +39,8 @@ test:
     - test -f ${PREFIX}/lib/libgrib_api.dylib  # [osx]
     - test -f ${PREFIX}/lib/libgrib_api_f77.dylib  # [osx]
     - test -f ${PREFIX}/lib/libgrib_api_f90.dylib  # [osx]
-    #- conda inspect linkages -p $PREFIX ecmwf_grib  # [not win]
-    #- conda inspect objects -p $PREFIX ecmwf_grib  # [osx]
+    - conda inspect linkages -p $PREFIX ecmwf_grib  # [not win]
+    - conda inspect objects -p $PREFIX ecmwf_grib  # [osx]
 
 about:
   home: https://software.ecmwf.int/wiki/display/GRIB/Home
