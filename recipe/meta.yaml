@@ -22,7 +22,7 @@ requirements:
     - python  # [win]
     - cmake
     - jasper  # [not win]
-    - libpng >=1.6.23,<1.7
+    - libpng >=1.6.28,<1.7
     - libnetcdf 4.4.*
     - gcc  # [not win]
     - msinttypes  # [win and py<35]
@@ -31,7 +31,7 @@ requirements:
     - vc 14  # [win and py>=35]
   run:
     - jasper  # [not win]
-    - libpng >=1.6.23,<1.7
+    - libpng >=1.6.28,<1.7
     - libnetcdf 4.4.*
     - libgcc  # [linux]
     - libgfortran  # [osx]
