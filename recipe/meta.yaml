@@ -10,29 +10,40 @@ source:
   sha256: caec66c2d54331de9830dde853195262a1859bab36d5d03b4d44ac55784d921d
 
 build:
-  number: 0
-  skip: True  # [win]
+  number: 1
   detect_binary_files_with_prefix: true
+  features:
+    - vc9  # [win and py27]
+    - vc10  # [win and py34]
+    - vc14  # [win and py>=35]
 
 requirements:
   build:
+    - python  # [win]
     - cmake
-    - jasper
-    - libpng >=1.6.23,<1.7
+    - jasper  # [not win]
+    - libpng >=1.6.28,<1.7
     - libnetcdf 4.4.*
-    - gcc
+    - gcc  # [not win]
+    - msinttypes  # [win and py<35]
+    - vc 9  # [win and py27]
+    - vc 10  # [win and py34]
+    - vc 14  # [win and py>=35]
   run:
-    - jasper
-    - libpng >=1.6.23,<1.7
+    - jasper  # [not win]
+    - libpng >=1.6.28,<1.7
     - libnetcdf 4.4.*
     - libgcc  # [linux]
     - libgfortran  # [osx]
+    - vc 9  # [win and py27]
+    - vc 10  # [win and py34]
+    - vc 14  # [win and py>=35]
 
 test:
   commands:
     - grib_info
-    - ls $(grib_info -t)
-    - ls $(grib_info -d)
+    - ls $(grib_info -t)  # [not win]
+    - ls $(grib_info -d)  # [not win]
     - test -f ${PREFIX}/lib/libgrib_api.so  # [linux]
     - test -f ${PREFIX}/lib/libgrib_api_f77.so  # [linux]
     - test -f ${PREFIX}/lib/libgrib_api_f90.so  # [linux]
