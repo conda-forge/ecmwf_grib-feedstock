@@ -16,5 +16,7 @@ cmake -D CMAKE_INSTALL_PREFIX=$PREFIX \
 
 
 make
+if [[ $(uname) == Linux ]]; then
 ctest
+fi
 make install
