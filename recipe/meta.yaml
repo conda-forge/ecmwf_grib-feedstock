@@ -1,4 +1,4 @@
-{% set version = "1.19.0" %}
+{% set version = "1.23.1" %}
 
 package:
   name: ecmwf_grib
@@ -7,10 +7,10 @@ package:
 source:
   fn: grib_api-{{ version }}.tar.gz
   url: https://software.ecmwf.int/wiki/download/attachments/3473437/grib_api-{{ version }}-Source.tar.gz
-  sha256: caec66c2d54331de9830dde853195262a1859bab36d5d03b4d44ac55784d921d
+  sha256: 7b0c40bcc8794ee11385bd6b9c5230a23e2432c88c8203dfdc7ccee054535ad4
 
 build:
-  number: 1
+  number: 0
   skip: True  # [win]
   detect_binary_files_with_prefix: true
 
