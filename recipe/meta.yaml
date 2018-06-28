@@ -1,4 +1,4 @@
-{% set version = "1.26.1" %}
+{% set version = "1.27.0" %}
 
 package:
   name: ecmwf_grib
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://software.ecmwf.int/wiki/download/attachments/3473437/grib_api-{{ version }}-Source.tar.gz
-  sha256: da354b96ae5ac54aa8df0b25f67cce12ef6a4cf605325fe5fca8064152bf2aec
+  sha256: adf54b649da4eb25aee8eb9a8f9fa2de3f0ea318c597be056cbb7c28535fa6ef
 
 build:
   number: 0
