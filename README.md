@@ -20,10 +20,10 @@ Current build status
 
 Current release info
 ====================
-[![Conda Recipe](https://img.shields.io/badge/recipe-ecmwf_grib-green.svg)](https://anaconda.org/conda-forge/ecmwf_grib)
-[![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/ecmwf_grib.svg)](https://anaconda.org/conda-forge/ecmwf_grib)
-[![Conda Version](https://img.shields.io/conda/vn/conda-forge/ecmwf_grib.svg)](https://anaconda.org/conda-forge/ecmwf_grib)
-[![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/ecmwf_grib.svg)](https://anaconda.org/conda-forge/ecmwf_grib)
+
+| Name | Downloads | Version | Platforms |
+| --- | --- | --- | --- |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-ecmwf_grib-green.svg)](https://anaconda.org/conda-forge/ecmwf_grib) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/ecmwf_grib.svg)](https://anaconda.org/conda-forge/ecmwf_grib) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/ecmwf_grib.svg)](https://anaconda.org/conda-forge/ecmwf_grib) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/ecmwf_grib.svg)](https://anaconda.org/conda-forge/ecmwf_grib) |
 
 Installing ecmwf_grib
 =====================
